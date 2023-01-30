@@ -60,6 +60,7 @@ n.getSections = function () {
   return sectionElementList;
 } ();
 
+// this works by appending the created nav elements to namespace wide defined liFragment 
 n.mkNav = function (sectionElement) {
     let _tempLi = document.createElement("li");
     let _tempName = document.createTextNode(" " + sectionElement.dataset.nav + " ");
@@ -67,7 +68,10 @@ n.mkNav = function (sectionElement) {
     _tempLi.classList.add("menu__link");
     n.liFragment.appendChild(_tempLi);
 }
+// getSections returns an array of DOM Elements - mkNav is called on all of them to produce html nodes
 n.getSections.forEach(n.mkNav);
+
+
 
 n.getNavListParent().appendChild(n.liFragment);
 
@@ -88,5 +92,3 @@ n.getNavListParent().appendChild(n.liFragment);
 // Scroll to section on link click
 
 // Set sections as active
-
-
