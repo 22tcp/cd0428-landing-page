@@ -1,13 +1,10 @@
 # Landing Page Project
 
-## Table of Contents
+## Todos
 
-* [Instructions](#instructions)
+The goal is to achieve an automatically growing navigation
+when a section is added to the html page.
 
-## Instructions
+Furthermore I am asked to hightlight the active section 
+in the viewport, a click on a nav item shall smoothly scroll to the in itself linked section.
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.

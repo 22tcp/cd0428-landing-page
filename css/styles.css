@@ -11,8 +11,8 @@
 
 /* ---- Base Rules ---- */
 body {
-    background: rgb(136,203,171);
-    background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
+    background: rgb(136, 176, 203);
+    background: linear-gradient(0deg, rgb(136, 195, 203) 0%, rgb(0, 56, 60) 100%);
     margin: 0;
     font-family: 'Merriweather', serif;
     color: #fff;
@@ -65,36 +65,43 @@ section {
 
 /* Navigation Styles*/
 .navbar__menu ul {
-    padding-left: 0;
-    margin: 0;
-    text-align: right;
+    padding: 5px 2px 5px 2px;
+    margin: 5px;
+    text-align: left;
 }
 
 .navbar__menu li {
     display: inline-block;
+    padding: 4px;
+    margin: 0px 6px 0px 6px;
 }
 
 .navbar__menu .menu__link {
-    display: block;
-    padding: 1em;
-    font-weight: bold;
+    display: inline;
+    padding: 4px;
     text-decoration: none;
-    color: #000;
+    color: #fff;
 }
 
 .navbar__menu .menu__link:hover {
-    background: #333;
+    background: rgb(41, 40, 1);
     color: #fff;
+    padding: 8px;
     transition: ease 0.3s all;
+    border: 1px solid #fff;
+    border-radius: 4px;
 }
 
 /* Header Styles */
 .page__header {
-    background: #fff;
+    background: linear-gradient(0deg, rgba(1, 54, 160, 0.9 ) 25%, rgba(1, 56, 140, 0.9) 75%);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 5;
+    overflow-y: hidden;
+    margin: 1px;
+    padding: 1px;
 }
 
 /* Footer Styles */
@@ -188,7 +195,6 @@ section:nth-of-type(3n + 1) .landing__container::after {
     opacity: 0;
     transition: ease 0.5s all;
 }
-
 
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
