@@ -60,7 +60,7 @@ n.getSections = function () {
   return sectionElementList;
 } ();
 
-// this works by appending the created nav elements to namespace wide defined liFragment 
+// this method works by appending the created nav elements to namespace wide defined liFragment 
 n.mkNav = function (sectionElement) {
     let _tempLi = document.createElement("li");
     let _tempName = document.createTextNode(" " + sectionElement.dataset.nav + " ");

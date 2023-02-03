@@ -21,7 +21,7 @@ body {
 
 /* Typeography General*/
 h1 {
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Tangerine', sans-serif;
     font-size: 3em;
     margin: 2em 1rem;
 }
@@ -35,13 +35,14 @@ h1 {
 
 h2 {
     border-bottom: 1px solid #cc1;
-    font-family: 'Oxygen', Sans-Serif;
+    font-family: 'Tangerine', Sans-Serif;
     font-size: 3em;
     color: #fff;
 }
 
 p {
     line-height: 1.6em;
+    font-size: 1em;
     color: #eee;
 }
 
@@ -161,8 +162,8 @@ section:nth-of-type(even) .landing__container::before {
     z-index: -5;
     width: 10vh;
     height: 10vh;
-    border-radius: 50%;
-    opacity: 0;
+    border-radius: 40%;
+    opacity: 50%;
     transition: ease 0.5s all;
 }
 
@@ -191,8 +192,8 @@ section:nth-of-type(3n + 1) .landing__container::after {
     z-index: -5;
     width: 15vh;
     height: 15vh;
-    border-radius: 50%;
-    opacity: 0;
+    border-radius: 40%;
+    opacity: 50%;
     transition: ease 0.5s all;
 }
 
