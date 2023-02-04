@@ -85,17 +85,17 @@ section {
 }
 
 .navbar__menu .menu__link:hover {
-    background: rgb(41, 40, 1);
+    background: rgb(13, 165, 102);
     color: #fff;
-    padding: 8px;
+    padding: 4px 6px 4px 6px;
     transition: ease 0.3s all;
-    border: 1px solid #fff;
-    border-radius: 4px;
+    border-radius:4px;
 }
 
 /* Header Styles */
 .page__header {
-    background: linear-gradient(0deg, rgba(1, 54, 160, 0.9 ) 25%, rgba(1, 56, 140, 0.9) 75%);
+    /* background: linear-gradient(0deg, rgba(1, 54, 160, 0.9 ) 25%, rgba(1, 56, 140, 0.9) 75%); */
+    background: black;
     position: fixed;
     top: 0;
     width: 100%;

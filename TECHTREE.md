@@ -157,7 +157,7 @@
       ## Phases of event propagation
       
         -Capturing , only fires listeners with 3rd parameter set to true
-        -At target  - event is fired at element with listener
+        -At target  - eventL is fired at element with listener
         -bubbling - event from child went up to its parent elements and then fires listeners there
       
       ##  among many different child elements pick the ones of interest - event updrift->air_bubble_s in water hit the parent and gives .nodeName in UPPERCASE (wtf?)
@@ -212,4 +212,5 @@
     So why is this helpful? Well, this technique can help us to convert potentially long-running code to one that's broken up to allow for the browser to handle user interactions!
 
     https://javascript.info/settimeout-setinterval
+
 
