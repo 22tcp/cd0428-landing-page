@@ -23,9 +23,9 @@
  * 
 */
 // NameSpace - glue all definitions to a long, unique object identifier
-var landingPage_nameSpace = {};
+var LandingPage_nameSpace = {};
 // Nobody wants to type that more than twice, shortcut: n
-let n = landingPage_nameSpace;
+let n = LandingPage_nameSpace;
 //n.activeElement = "dom object";
 n.liFragment = document.createDocumentFragment();
 // console.log(" Fragment :" + n.liFragment + "\n");
@@ -60,41 +60,62 @@ n.getSections = function () {
   return sectionElementList;
 }();
 
+n.removeActiveSectionClasses = function () {
+  const _objectList = document.querySelectorAll("section");
+  _objectList.forEach(function (element) { element.classList.remove("your-active-class"); })
+}
+
 // this method works by appending the created nav elements to namespace wide defined liFragment 
 n.mkNav = function (sectionElement) {
   let _tempLi = document.createElement("li");
-
   let _tempName = document.createTextNode(" " + sectionElement.dataset.nav + " ");
   _tempLi.append(_tempName);
-
-  // here is a neat detail hidden. The eventListener is created by riding piggy-back in the run-once 
-  // creation of the nav menu - an external function does not work here because during runtime 
-  // the function parameters are not present so we have to directly use the callback function parameter of the listener
-  // to fire the scrollIntoView method when clicking the nav:
-  _tempLi.addEventListener("click", function (e) {
-    e.preventDefault();
-    const _aSection = document.getElementById(sectionElement.id);
-    _aSection.scrollIntoView({ behavior: "smooth", inline: "nearest" });
-  });
-
+  // let's store the reference to the originator for later use:
+  _tempLi.dataset.ref = sectionElement.id;
   _tempLi.classList.add("menu__link");
   n.liFragment.appendChild(_tempLi);
 }
 // getSections returns an array of DOM Elements - mkNav is called on all of them to produce html nodes
 n.getSections.forEach(n.mkNav);
-
-
+// move the fragment into the DOM
 n.getNavListParent().appendChild(n.liFragment);
 
+// using one handle to scroll to element.id via dataset ref as parameter handshake
 
+n.getNavListParent().addEventListener("click", function (e) {
+  e.preventDefault();
 
-//addEventListener( 'click', n.smoothScrollEvent( sectionElement.id ));
+  if (e.target.dataset.ref != null) {
+    const originatorID = e.target.dataset.ref;
+    const origElement = document.getElementById(originatorID);
+    origElement.scrollIntoView({ behavior: "smooth", inline: "nearest" });
+  } else { return; }
+  //console.log('Target of event in navi : ' + e.target.dataset.ref);
+});
 
 
 // Add class 'active' to section when near top of viewport
 
+n.scrollFlag = null;
+window.addEventListener('scroll', function (e) {
+  if (n.scrollFlag !== null) {
+    clearTimeout(n.scrollFlag);
+  }
+  n.scrollFlag = setTimeout(function () {
+    n.getSections.forEach(
+      function (sectionElement) {
+        const yDistance = sectionElement.getBoundingClientRect().y;
+        if (yDistance > -100 && yDistance < 150) {
+          /* console.log("close: " + sectionElement.id); */
+          sectionElement.classList.add('active__section');
+        } else {
+          sectionElement.classList.remove('active__section');
+        }
+      }
+    );
+  }, 100);
+}, false);
 
-// Scroll to anchor ID using scrollTO event
 
 
 /**
