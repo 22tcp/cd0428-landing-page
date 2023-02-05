@@ -105,7 +105,7 @@ window.addEventListener('scroll', function (e) {
     n.getSections.forEach(
       function (sectionElement) {
         const yDistance = sectionElement.getBoundingClientRect().y;
-        if (yDistance > -100 && yDistance < 150) {
+        if (yDistance > -100 && yDistance < 250) {
           /* console.log("close: " + sectionElement.id); */
           sectionElement.classList.add('active__section');
         } else {
