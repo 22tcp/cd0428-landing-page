@@ -50,7 +50,7 @@
   ```
 
   ## for ...of loop
-  ## spread operator  "..."  array to elements
+  ### spread operator  "..."  array to elements
     ```
       const primes = new Set([2, 3, 5, 7, 11, 13, 17, 19, 23, 29]);
       console.log(...primes);
@@ -125,7 +125,7 @@
 
   ## Event handling
 
-      The EventTarget page says that EventTarget:
+      The EventTarget page says that EventTarget
 
       is an interface implemented by objects that can receive events and may have listeners for them.
 
@@ -139,7 +139,7 @@
 
     JavaScript has the double equality (==) operator that will allow type coercion. It also has the triple equality (===) symbol that will prevent type coercion when comparing
 
-    ## Only the stack-address wise equal function that was bound to an event can be used to remove it from its element, anything else is memory address unequal and thus 
+    Only the stack-address wise equal function that was bound to an event can be used to remove it from its element, anything else is memory address unequal and thus 
       does not match the bindind
 
       ```
@@ -154,13 +154,13 @@
       document.removeEventListener('click', myEventListeningFunction);
       ```
 
-      ## Phases of event propagation
+      ### Phases of event propagation
       
         -Capturing , only fires listeners with 3rd parameter set to true
         -At target  - eventL is fired at element with listener
         -bubbling - event from child went up to its parent elements and then fires listeners there
       
-      ##  among many different child elements pick the ones of interest - event updrift->air_bubble_s in water hit the parent and gives .nodeName in UPPERCASE (wtf?)
+      among many different child elements pick the ones of interest - event updrift->air_bubble_s in water hit the parent and gives .nodeName in UPPERCASE (wtf?)
     ```
       document.querySelector('#content').addEventListener('click', function (evt) {
           if (evt.target.nodeName === 'SPAN') {  // ← verifies target is desired element
@@ -169,7 +169,8 @@
       });
     ```
 
-    DOM Ready Event
+  ## DOM Ready Event
+
     document.addEventListener( 'DOMContentLoaded', function(){...} );
     Performance measurement 
     performance.now() tstamp millisecond resolution
