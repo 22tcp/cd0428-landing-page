@@ -1,3 +1,5 @@
+This license is used for the parts I added to the fork, like the app.js javascript code, changes in style.css and index.html
+
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
