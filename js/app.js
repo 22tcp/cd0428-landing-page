@@ -109,17 +109,21 @@ n.getNavListParent().addEventListener("click", function (e) {
 //  this eventListener needs to be aware scrolling / halting and interruptive scrolling
 // the setTimeout placeholder is undefined at loading time and "pushes" its timer forward while
 // the event keeps fireing
+
+
 n.scrollFlag = null;
 window.addEventListener("scroll", function (e) {
   if (n.scrollFlag !== null) {
     clearTimeout(n.scrollFlag);
   }
+  //must be calculated ongoingly
+  n.viewportY = window.innerHeight;
+  console.log("viewportY: " + n.viewportY );
   n.scrollFlag = setTimeout(function () {
     n.getSections.forEach(
       function (sectionElement) {
-        const yDistance = sectionElement.getBoundingClientRect().y;
-        if (yDistance > -100 && yDistance < 250) {
-          /* console.log("close: " + sectionElement.id); */
+        let yDistance = sectionElement.getBoundingClientRect().y;
+        if (  yDistance > - 150 && yDistance < n.viewportY / 2) {
           sectionElement.classList.add("active__section");
           document.getElementById("li__" + sectionElement.id).classList.add("nav__active__class");
         } else {
@@ -128,8 +132,7 @@ window.addEventListener("scroll", function (e) {
         }
       }
     );
-  }, 50);
+  }, 10);
 }, false);
 
 // Set sections as active in nav
-
