@@ -1,5 +1,20 @@
-# Landing Page Project
+# Table of contents
+- [Landing Page Project](#landing-page-project)
+- [Demo-Preview](#demo-preview)
+- [Table of contents](#table-of-contents)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Development](#development)
+- [Contribute](#contribute)
+    - [Sponsor](#sponsor)
+    - [Adding new features or fixing bugs](#adding-new-features-or-fixing-bugs)
+- [License](#license)
+- [Footer](#footer)
 
+## Landing Page Project
+
+## Demo Preview
+there is a website reachable - contact the author
 ## Todos
 
 The goal is to achieve an automatically growing navigation
