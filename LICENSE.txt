@@ -1,5 +1,3 @@
-This license references to the forked original commit  (mainly this License, index.html and style.css )
-
 Copyright © 2012 - 2020, Udacity, Inc.
 
 Udacity hereby grants you a license in and to the Educational Content, including
