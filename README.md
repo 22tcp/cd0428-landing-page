@@ -60,8 +60,8 @@ The css class is added when the condition is matched else it's removed.
 
 ## License
 As this is a fork of the udacity skeleton for this project
-I kept the original license and annotated its range, for my own
-code I added the GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007
+I kept the original license, so this is licensed as  [cc-nc-nd 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
 
 
 ## Footer
