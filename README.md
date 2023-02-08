@@ -53,7 +53,9 @@ Then I had the correct idea, to scroll the whole document meant to bind the
 eventListener to the document/window.  
 The styling for the active section was embedded in a setTimeout callback,  
 looping over the section elements and evaluating every y-distance for every section.  
-A difference window of -100 to +249 pixels towards the upper viewport border works ok.  
+A difference window of -100 to +249 pixels towards the upper viewport border works ok
+but I redid the computation and now use -150 to 0.5 * viewport height.  
+This ensures that there is not that much "in between" error scrolling over section borders.
 The css class is added when the condition is matched else it's removed.  
 
 ## License
