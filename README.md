@@ -16,15 +16,16 @@
   Mhm. Possibly fiddling with the z-position might be working. It's on the todo-list.
 
 ## Demo Preview
-there is a website reachable - contact the author
+there is a website reachable - contact the author  
 ## Installation
 
-Clone the project to a webserver's root directory.
-Open the website of the server and add the created directory, http(s)://your-name-here/directory
+Clone the project to a webserver's root directory.  
+Open the website of the server and add the created directory  
+http(s)://your-name-here/directory
 
 ## Technology
 
-About namespacing
+About namespacing  
 This is experimental. I came up with it while reading about collisions of global variables.
 I defined an object with a unique, long name in the global namespace.
 Then a short variable "n" is declared with let and set equal to the object.
