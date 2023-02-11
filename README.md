@@ -31,7 +31,7 @@ I defined an object with a unique, long name in the global namespace.
 Then a short variable "n" is declared with let and set equal to the object.
 All methods and properties ( similar to variables) are declared prefixed with "n."   so they all rest in this secluded namespace.
 Optional const and var declarations, as n.identifier becomes an object property.
-It's harder to read but evades possible collisions within global namespaces.
+It takes a moment to read into the object, though. I will continue to experiment.
 
 ## Development
 - navigation and scroll to element
