@@ -16,7 +16,7 @@
 <body>
   <!-- HTML Follows BEM naming conventions 
   IDs are only used for sections to connect menu anchors to sections -->
-  <header class="page__header">
+  <header id="page_top" class="page__header">
     <nav class="navbar__menu">
       <!-- Navigation starts as empty UL that will be populated with JS -->
       <ul id="navbar__list"></ul>
@@ -30,14 +30,14 @@
     a data attribute that will populate the li node.
     Adding more sections will automatically populate nav.
     The first section is set to active class by default -->
-    <section id="section1" data-nav="coffee addiction">
+    <section id="section1" data-nav="coffee obsession">
       <div class="landing__container">
         <h2>Our Philosophy</h2>
-        <p>Coffee beans are a gift. They are the foundation of our café's culture, an evolution of taste, the crafting
-          of hot brewed goodness.
+        <p>Coffee beans are a gift. They are the foundation of our café's culture, an evolution of tastiness, give us opportunity
+          to display our genuine master crafting of hot beverage.
           To brew is an artform, nearly comparable to zen meditation, without haste, the grinding fills the presence -
-          there is no goal, only perfection in the moment.
-          Some say, there is no perfection, only excellence by striving forever. The lowtech basics are key:
+          there is no goal in the turning of the handle but creating small waves of delicate scent.
+          Some say: there is no perfection, only excellence by striving forever. The lowtech basics are key:
           mechanically ground beans, a french press and patience are our recipe.
         </p>
 
@@ -48,34 +48,40 @@
     <section id="section2" data-nav="supreme cookie">
       <div class="landing__container">
         <h2>The Supreme Cookie</h2>
-        <p>Once there was only ship's rusk. After centuries of crumbling distasteful blandness...
-          oversea traders brought the solution. Sugar from sugar canes. Cacao from cacao beans. Flour from golden wheat fields.
-          Mixing it all together, we add some rum to the dough and then let it bake in the stove.
+        <p>Once there was only ship's rusk. Dry, bland and hard as rock. After centuries of crumbling distasteful blandness...
+          oversea traders brought the solution. Sugar from sugar canes. Cacao from cacao beans. We added the flour of our golden wheat fields.
+          Mixing it all together, we fuel it with rum to get the dough perfect and then let it bake in our stone stove.
           Hand crafted goodness, melting on the tongue!
         </p>
 
-        <p>Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel
-          luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur
-          porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.</p>
+        <p>Our other competitor for best cookie of all times this side of the galaxy is the non-chocolate lemon variant. When you suffer from triple-choc-overload come
+          and relax your tase buds with fruity freshness and crumbly bits.
+        </p>
       </div>
     </section>
-    <section id="section3" data-nav="Section 3">
+    <section id="section3" data-nav="loose tea">
       <div class="landing__container">
-        <h2>Section 3</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra
-          dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus
-          imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget
-          bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet
-          elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo
-          nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie
-          semper in tellus. Sed congue et odio sed euismod.</p>
+        <h2>Loose Tea</h2>
+        <p>Perfect timing delivers the correct brewing temperatures.</p>
 
-        <p>Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel
-          luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur
-          porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.</p>
+        <p>Cooling is key. Tea is something that should be approached with patience. And we are always careful at what heat level the brewing process
+          is allowed to commence. For example there is our green tea selection, best when the water is down to seventy-five degree celsius,
+          that is 167 degree Fahrenheit, brewed for a short time it keeps you awake for way longer than coffee could. And for relaxation
+          the green tea leaves can be left for another four to five minutes which makes the theine dissolve differently thus
+          creating a desireable relaxing effect. 
+        </p>
       </div>
     </section>
-    <section id="section4" data-nav="Last but not...">
+    <section id="section4" data-nav="sandwhich heaven">
+      <div class="landing__container">
+        <h2>Sandwhich Heaven</h2>
+        <p>We only use whole-grain toasts or the european special variant with so-called "grey" bread. This is SO popular in the netherlands!</p>
+
+        <p>Our specialty is the "brotje gezond" - that consists of, from top to bottom: bread slice, dip-sauce, salad, cheese, tomatoe slices, cucumber discs,
+           your choice of cheese and chipped egg, ketchup and another slice of bread.</p>
+      </div>
+    </section>    
+    <section id="section5" data-nav="Last but not...">
       <div class="landing__container">
         <h2>Last But Not Least</h2>
         <p>Oh so you have scrolled to the end? Do not worry, we've got you covered.</p>
@@ -89,7 +95,7 @@
     </section>    
   </main>
   <footer class="page__footer">
-    <p>base repo &copy Udacity  // js &copy Thorsten</p>
+    <p>base repo &copy Udacity  // story and js &copy Thorsten</p>
   </footer>
   <script src="js/app.js"></script>
 </body>
