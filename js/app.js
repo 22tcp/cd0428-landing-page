@@ -94,15 +94,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
   // move the fragment into the DOM
   getNavListParent().appendChild(liFragment);
 
-  // link to top of page this is not part of the section nav, rather decoration
-  document.getElementById("li__page_top").addEventListener("click", (e) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-
   // using one handle to scroll to element.id via dataset ref as parameter handshake
   // toggling state vars prevActiveLink and currentActiveLink 
-
   getNavListParent().addEventListener("click", (e) => {
     e.preventDefault();
     //console.log(" id : " + e.target.id);
