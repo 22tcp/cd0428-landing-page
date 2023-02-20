@@ -62,12 +62,13 @@ const getSections = () => {
   return sectionElementList;
 };
 
-const removeActiveSectionClasses = () => {
-  const _objectList = document.querySelectorAll("section");
-  _objectList.forEach(function (element) { element.classList.remove("your-active-class"); })
-}
+// first concept not needed, kept for edupurp
+// const removeActiveSectionClasses = () => {
+//   const _objectList = document.querySelectorAll("section");
+//   _objectList.forEach(function (element) { element.classList.remove("your-active-class"); })
+// }
 
-// always add the homebutton first
+// always add the homebutton first - commented out for udacity audit
 // let _homeBtn = document.createElement("li");
 // let _homeSymbol = document.createTextNode(" Top ");
 // _homeBtn.append(_homeSymbol);
