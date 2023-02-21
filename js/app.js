@@ -29,10 +29,14 @@
 // Nobody wants to type that more than twice, shortcut: n
 
 let liFragment = document.createDocumentFragment();
-
+let coFragment = document.createDocumentFragment();
 let currentActiveLink = "";
 let prevActiveLink = "";
 let scrollFlag = null;
+let scrollFlagSlow = null;
+let pageTop = document.getElementById("page_top");
+let navTop = document.getElementById("nav_top");
+
 /**
  * End Global Variables
  * Start Helper Functions
@@ -43,7 +47,7 @@ const getNavListParent = () => {
   return document.getElementById("navbar__list");
 }
 
-
+//debug 
 const logData = (data) => { console.log(" Out: " + data); }
 
 /**
@@ -77,6 +81,8 @@ const getSections = () => {
 // liFragment.appendChild(_homeBtn);
 
 // this method works by appending the created nav elements to namespace wide defined liFragment 
+// also: create collapsible control objects
+
 const mkNav = (sectionElement) => {
   let _tempLi = document.createElement("li");
   let _tempName = document.createTextNode(" " + sectionElement.dataset.nav + " ");
@@ -87,6 +93,8 @@ const mkNav = (sectionElement) => {
   _tempLi.classList.add("menu__link", "unselectable");
   liFragment.appendChild(_tempLi);
 }
+
+
 
 // when most of the content we need is loaded start the menu build
 window.addEventListener('DOMContentLoaded', (e) => {
@@ -117,16 +125,28 @@ window.addEventListener('DOMContentLoaded', (e) => {
     //console.log('Target of event in navi : ' + e.target.dataset.ref);
   });
 });
+
+
 // Add class 'active' to section when near top of viewport
 //  this eventListener needs to be aware scrolling / halting and interruptive scrolling
 // the setTimeout placeholder is undefined at loading time and "pushes" its timer forward while
 // the event keeps fireing
 
+
 window.addEventListener("scroll", function (e) {
+  e.preventDefault();
   if (scrollFlag !== null) {
     clearTimeout(scrollFlag);
   }
-
+  if (scrollFlagSlow !== null) {
+    clearTimeout(scrollFlagSlow);
+  }
+  pageTop.classList.remove("page__header__scrolling");
+  navTop.classList.remove("nav__header__scrolling");
+  scrollFlagSlow = setTimeout(function () {
+    navTop.classList.add("nav__header__scrolling");
+    pageTop.classList.add("page__header__scrolling");
+  }, 500);
   //must be calculated ongoingly
   let viewportY = window.innerHeight;
   scrollFlag = setTimeout(function () {
@@ -135,7 +155,7 @@ window.addEventListener("scroll", function (e) {
       function (sectionElement) {
         let yDistance = sectionElement.getBoundingClientRect().y;
         // Set sections as active in nav
-        if (yDistance > - 150 && yDistance < viewportY / 2) {
+        if (yDistance > - 125 && yDistance < viewportY / 2) {
           sectionElement.classList.add("active__section");
           document.getElementById("li__" + sectionElement.id).classList.add("nav__active__class");
         } else {
@@ -144,6 +164,21 @@ window.addEventListener("scroll", function (e) {
         }
       }
     );
-  }, 10);
+  }, 20);
 }, false);
 
+// on hovering the menu let it reappear
+
+pageTop.addEventListener("mouseover", function (e) {
+  e.preventDefault();
+  pageTop.classList.remove("page__header__scrolling");
+  navTop.classList.remove("nav__header__scrolling");
+}, true);
+pageTop.addEventListener("mouseout", function (e) {
+    pageTop.classList.add("page__header__scrolling");
+    navTop.classList.add("nav__header__scrolling");
+}, true);
+
+// collapsible
+// basic solution
+// document.querySelectorAll( "#" + "section2" + " .landing__container p").forEach( (element) => { element.style.display = "block" });

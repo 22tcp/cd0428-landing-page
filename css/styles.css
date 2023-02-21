@@ -54,29 +54,11 @@ main {
 }
 
 .main__hero {
-  min-height: 40vh;
-  padding-top: 3em;
+  min-height: 20vh;
+  padding-top: 1em;
   text-align: center;
 }
 
-section {
-  position: relative;
-  min-height: 80vh;
-}
-
-.homeBtn {
-  font-size: 14px;
-  color: #ffffffe8;
-  background: rgba(49, 46, 41, 0.5);
-  border-radius: 5%;
-}
-
-.homeBtn:hover {
-  background: rgb(10, 124, 77, 0.815);
-  color: #fff;
-  padding: 4px 6px 4px 6px;
-  border-radius: 4px;
-}
 
 /* ---- Module Rules ---- */
 .navbar__menu {
@@ -133,8 +115,7 @@ section {
 
 /* Header Styles */
 .page__header {
-  /* background: linear-gradient(0deg, rgba(1, 54, 160, 0.9 ) 25%, rgba(1, 56, 140, 0.9) 75%); */
-  background: rgb(71, 64, 64);
+  background: linear-gradient(0deg, rgba(71, 64, 64, 0.9) 25%, rgba(71, 64, 64, 0.9) 75%);
   position: fixed;
   top: 0;
   width: 100%;
@@ -142,6 +123,14 @@ section {
   overflow-y: hidden;
   margin: 1px;
   padding: 1px;
+}
+
+.page__header__scrolling {
+  background: #0000000f;
+}
+
+.nav__header__scrolling {
+  visibility: hidden;
 }
 
 /* Footer Styles */
@@ -156,6 +145,12 @@ section {
 }
 
 /* ---- Theme Rules ---- */
+
+section {
+  position: relative;
+  min-height: 80vh;
+}
+
 /* Landing Container Styles */
 .landing__container {
   padding: 1em;
