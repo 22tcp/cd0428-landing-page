@@ -29,14 +29,13 @@
 // Nobody wants to type that more than twice, shortcut: n
 
 let liFragment = document.createDocumentFragment();
-let coFragment = document.createDocumentFragment();
 let currentActiveLink = "";
 let prevActiveLink = "";
 let scrollFlag = null;
 let scrollFlagSlow = null;
 let pageTop = document.getElementById("page_top");
 let navTop = document.getElementById("nav_top");
-
+let sectionParent = document.querySelector("main");
 /**
  * End Global Variables
  * Start Helper Functions
@@ -66,24 +65,14 @@ const getSections = () => {
   return sectionElementList;
 };
 
-// first concept not needed, kept for edupurp
-// const removeActiveSectionClasses = () => {
-//   const _objectList = document.querySelectorAll("section");
-//   _objectList.forEach(function (element) { element.classList.remove("your-active-class"); })
-// }
-
-// always add the homebutton first - commented out for udacity audit
-// let _homeBtn = document.createElement("li");
-// let _homeSymbol = document.createTextNode(" Top ");
-// _homeBtn.append(_homeSymbol);
-// _homeBtn.id = "li__page_top";
-// _homeBtn.classList.add("homeBtn", "unselectable");
-// liFragment.appendChild(_homeBtn);
 
 // this method works by appending the created nav elements to namespace wide defined liFragment 
-// also: create collapsible control objects
+// also: create collapsible control objects  arrowdown 25BC  arrowright 25BA
 
 const mkNav = (sectionElement) => {
+  // some scroll magic adhered to all sections 
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-type
+  sectionElement.classList.add("snap__align");
   let _tempLi = document.createElement("li");
   let _tempName = document.createTextNode(" " + sectionElement.dataset.nav + " ");
   _tempLi.append(_tempName);
@@ -92,8 +81,15 @@ const mkNav = (sectionElement) => {
   _tempLi.dataset.ref = sectionElement.id;
   _tempLi.classList.add("menu__link", "unselectable");
   liFragment.appendChild(_tempLi);
+  let _tempSpan = document.createElement("span");
+  _tempSpan.id = "co__" + sectionElement.id;
+  _tempSpan.dataset.ref = sectionElement.id;
+  _tempSpan.append(document.createTextNode("\u25BA"));
+  _tempSpan.classList.add("arrows", "unselectable");
+  let _childElement = document.querySelector("#" + sectionElement.id + " .landing__container h2");
+  document.querySelector("#" + sectionElement.id + " .landing__container")
+    .insertBefore(_tempSpan, document.querySelector("#" + sectionElement.id + " .landing__container>h2"));
 }
-
 
 
 // when most of the content we need is loaded start the menu build
@@ -175,8 +171,8 @@ pageTop.addEventListener("mouseover", function (e) {
   navTop.classList.remove("nav__header__scrolling");
 }, true);
 pageTop.addEventListener("mouseout", function (e) {
-    pageTop.classList.add("page__header__scrolling");
-    navTop.classList.add("nav__header__scrolling");
+  pageTop.classList.add("page__header__scrolling");
+  navTop.classList.add("nav__header__scrolling");
 }, true);
 
 // collapsible

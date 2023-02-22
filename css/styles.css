@@ -38,6 +38,8 @@ h2 {
   font-family: 'Tangerine', Sans-Serif;
   font-size: 3em;
   color: #fff;
+  display: inline-block;
+
 }
 
 p {
@@ -144,11 +146,23 @@ main {
   color: #fff;
 }
 
-/* ---- Theme Rules ---- */
+/* ---- Section Rules ---- */
 
 section {
   position: relative;
   min-height: 80vh;
+}
+
+.snap__proxy {
+  scroll-snap-type: y proximity;
+}
+
+.snap__start {
+  scroll-snap-align: start;
+}
+
+.snap__align {
+  scroll-snap-align: center;
 }
 
 /* Landing Container Styles */
@@ -237,6 +251,15 @@ section:nth-of-type(3n + 1) .landing__container::after {
 
 /* Note: active__section class is applied through javascript.
  You should update the class here and in the index.html to what you set in your javascript file.  */
+
+.arrows {
+  font-size: 2em;
+  z-index: 5;
+  position: relative;
+  vertical-align: middle;
+}
+
+
 section.active__section {
   background: rgb(0, 0, 0);
   background: linear-gradient(45deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
