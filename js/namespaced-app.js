@@ -25,7 +25,7 @@
 // NameSpace - glue all definitions to a long, unique object identifier
 // this is only viable as long as no this for an instance related behaviour is needed - ES6 style arrow functions
 // are not meant to be methods ( source MDN ) 
-var LandingPage_nameSpace = {};
+var LandingPage_nameSpace = LandingPage_nameSpace || {};
 // Nobody wants to type that more than twice, shortcut: n
 let n = LandingPage_nameSpace;
 //n.activeElement = "dom object";
