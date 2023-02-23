@@ -32,6 +32,10 @@ Then a short variable "n" is declared with let and set equal to the object.
 All methods and properties ( similar to variables) are declared prefixed with "n."   so they all rest in this secluded namespace.
 Optional const and var declarations, as n.identifier becomes an object property.
 It takes a moment to read into the object, though. I will continue to experiment.
+Edit: after comparing the usual methods and closure style encapsulation I dropped my own version.
+Especially because ES6 arrow function declarations do not work like named function declaration. They have no bindings to "this"
+and can not be used as methods - which was my way to separate: put everything inside of one object.
+I will keep on researching.
 
 ## Development
 - navigation and scroll to element
