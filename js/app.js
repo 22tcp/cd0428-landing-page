@@ -45,7 +45,12 @@ let sectionParent = document.querySelector("main");
 const getNavListParent = () => {
   return document.getElementById("navbar__list");
 }
-
+const getCollapseAnchor = () => {
+  return document.getElementById("collapse__anchor");
+}
+const toggleCollapse = (collapsible) => {
+document.querySelector( "#" + collapsible.id + " .landing__container p").forEach( (element) => { element.style.display = "block" });
+}
 //debug 
 const logData = (data) => { console.log(" Out: " + data); }
 
@@ -120,6 +125,13 @@ window.addEventListener('DOMContentLoaded', (e) => {
     } else { return; }
     //console.log('Target of event in navi : ' + e.target.dataset.ref);
   });
+  
+  // getCollapseAnchor().addEventListener("click", (e) => {
+  //   e.preventDefault();
+  //   if (e.target.id.includes("co__")) {
+  //     document.querySelectorAll( "#" + e.target.id + " .landing__container p").forEach( (element) => { element.style.display = "block" });
+  //   }
+  // });
 });
 
 
