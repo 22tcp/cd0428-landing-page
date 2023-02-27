@@ -48,8 +48,6 @@ p {
   color: #eee;
 }
 
-
-
 /* ---- Layout Rules ---- */
 main {
   margin: 10vh 1em 10vh;
@@ -61,12 +59,12 @@ main {
   text-align: center;
 }
 
-
 /* ---- Module Rules ---- */
 .navbar__menu {
   margin: 0px;
   border: 1px;
   border-radius: 5%;
+  line-height: 1.5em;
   vertical-align: middle;
 }
 
@@ -76,6 +74,14 @@ main {
   padding: 0px 2px 1px 2px;
   margin: 6px 0px 2px 0px;
   text-align: left;
+  white-space: nowrap;
+  display: block;
+}
+
+@media only screen and (max-width:800px) {
+  .navbar__menu {
+    line-height: 2em;
+  }
 }
 
 .navbar__menu li {
@@ -153,9 +159,9 @@ section {
   min-height: 70vh;
 }
 
-@media only screen and ( min-width: 480px ) {
- .snap__proxy {
-  scroll-snap-type: y proximity;
+@media only screen and (min-width: 480px) {
+  .snap__proxy {
+    scroll-snap-type: y proximity;
   }
 }
 
