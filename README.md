@@ -12,8 +12,7 @@
 
 - an automatically growing navigation when sections are added
 - scroll-awareness, position of section triggers active tagging - IMPORTANT - I experimented with snap-scrolling here.
-- NOT doing the hidden fixed menu bar  while not scrolling, it hides my efforts to activate the nav buttons while scrolling.  
-  Mhm. Possibly fiddling with the z-position might be working. It's on the todo-list.
+- solved the self-hiding menu bar to my satisfaction
 
 ## Demo Preview
 there is a website reachable - contact the author  
