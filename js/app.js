@@ -160,7 +160,7 @@ window.addEventListener("scroll", function (e) {
         }
       }
     );
-  }, 20);
+  }, 10);
 }, false);
 
 // on hovering the menu let it reappear
