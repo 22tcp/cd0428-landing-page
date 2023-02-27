@@ -74,13 +74,13 @@ main {
   padding: 0px 2px 1px 2px;
   margin: 6px 0px 2px 0px;
   text-align: left;
-  white-space: nowrap;
-  display: block;
+  display: flex;
 }
 
 @media only screen and (max-width:800px) {
-  .navbar__menu {
+  .navbar__menu ul {
     line-height: 2em;
+    display: grid;
   }
 }
 
@@ -134,7 +134,7 @@ main {
 }
 
 .page__header__scrolling {
-  background: #0000000f;
+  background: transparent;
 }
 
 .nav__header__scrolling {
