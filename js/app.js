@@ -81,14 +81,14 @@ const mkNav = (sectionElement) => {
   _tempLi.dataset.ref = sectionElement.id;
   _tempLi.classList.add("menu__link", "unselectable");
   liFragment.appendChild(_tempLi);
-  let _tempSpan = document.createElement("span");
-  _tempSpan.id = "co__" + sectionElement.id;
-  _tempSpan.dataset.ref = sectionElement.id;
-  _tempSpan.append(document.createTextNode("\u25BA"));
-  _tempSpan.classList.add("arrows", "unselectable");
-  let _childElement = document.querySelector("#" + sectionElement.id + " .landing__container h2");
-  document.querySelector("#" + sectionElement.id + " .landing__container")
-    .insertBefore(_tempSpan, document.querySelector("#" + sectionElement.id + " .landing__container>h2"));
+  // let _tempSpan = document.createElement("span");
+  // _tempSpan.id = "co__" + sectionElement.id;
+  // _tempSpan.dataset.ref = sectionElement.id;
+  // _tempSpan.append(document.createTextNode("\u25BA"));
+  // _tempSpan.classList.add("arrows", "unselectable");
+  // let _childElement = document.querySelector("#" + sectionElement.id + " .landing__container h2");
+  // document.querySelector("#" + sectionElement.id + " .landing__container")
+  //   .insertBefore(_tempSpan, document.querySelector("#" + sectionElement.id + " .landing__container>h2"));
 }
 
 
